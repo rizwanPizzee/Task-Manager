@@ -29,13 +29,25 @@
                 <td class="tb-content">{{task.content}}</td>
                 <td class="tb-date">{{task.date_created.strftime("%d-%m-%Y %I:%M %p")}}</td>
                 <td class="tb-actions">
-                    <a class="delete" href="/delete/{{task.id}}">Delete</a>
+                    <a class="delete" href="#myModal-{{task.id}}">Delete</a>
                     <br>
                     <a class="update" href="/update/{{task.id}}">Edit</a>
                 </td>
             </tr>
+
+            <div id="myModal-{{task.id}}" class="modal">
+                <div class="modal-content">
+                    <a href="#" class="close">&times;</a>
+                    <h2 style="color: red; text-align: center; margin-bottom: 10px">Delete Task</h2>
+                    <p style="margin-left: 10px">Do you want to delete the task: <span style="color: rgb(209, 0, 0);">"{{task.content}}"</span></p>
+                    <a class="delete1" href="/delete/{{task.id}}">Delete</a>
+                    <a class="close-btn" href="/">Close</a>
+                </div>
+            </div>
         {% endfor %}
     </table>
     {% endif %}
+
+    
 </div>
 {% endblock %}
