@@ -1,0 +1,7 @@
+1. First install Flask-SQLAlchemy
+-pip install Flask-SQLAlchemy
+-can check by: pip3 show Flask-SQLAlchemy
+
+2. "from flask_sqlchemy import SQLAlchemy" in main file app.py
+
+then do the remaining setup in app.py 
